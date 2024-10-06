@@ -51,6 +51,9 @@ class Manager extends Employee {
     getDetails() {
         return `Name: ${this.name}, Salary: ${this.salary}, Position: ${this.position}, Department: ${this.department}, Bonus: ${this.bonus}`;
     }
+    TotalCompensation() {
+        return this.salary + this.bonus; //calling new function that handles total compensation
+    }
 }
 
 //
