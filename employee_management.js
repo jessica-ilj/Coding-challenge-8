@@ -11,3 +11,25 @@ class Employee {
         return `Name: ${this.name}, Salary: ${this.salary}, Position: ${this.position}, Department: ${this.department}`;
     }
 }
+
+// Department class
+
+class Department {
+    constructor(name) {
+        this.name = name;
+        this.employees = []; 
+    }
+
+    addEmployee(employee) {  //Adds an Employee object to the employees array.
+        this.employees.push(employee);
+    }
+
+    getDepartmentSalary() {  //Returns the total salary of all employees in the department
+        let totalSalary = 0;
+        for (let employee of this.employees) {
+            totalSalary += employee.salary;
+        }
+        return totalSalary;
+    }
+}
+
