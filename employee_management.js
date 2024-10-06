@@ -10,6 +10,9 @@ class Employee {
     getDetails() {
         return `Name: ${this.name}, Salary: ${this.salary}, Position: ${this.position}, Department: ${this.department}`;
     }
+    TotalCompensation() {
+        return this.salary;  // Regular employees only have salary, no bonus
+    }
 }
 
 // Department class
@@ -50,4 +53,4 @@ class Manager extends Employee {
     }
 }
 
-//Handle bonuses for managers
+//
