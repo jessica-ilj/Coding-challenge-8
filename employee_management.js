@@ -31,6 +31,10 @@ class Department {
         }
         return totalSalary;
     }
+    //handle bonuses for managers
+    calculateTotalSalaryWithBonus() {
+        return this.employees.reduce((total, employee) => total + employee.TotalCompensation(), 0); //calculates the total salary for the department, including any bonuses for managers.
+    }
 }
 
 //Manager class inheriting from employee
@@ -46,3 +50,4 @@ class Manager extends Employee {
     }
 }
 
+//Handle bonuses for managers
