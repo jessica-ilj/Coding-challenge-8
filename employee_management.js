@@ -11,7 +11,7 @@ class Employee {
         return `Name: ${this.name}, Salary: ${this.salary}, Position: ${this.position}, Department: ${this.department}`;
     }
     TotalCompensation() {
-        return this.salary;  // Regular employees only have salary, no bonus
+        return this.salary;  // Regular employees only have a salary, no bonus
     }
 }
 
@@ -56,4 +56,33 @@ class Manager extends Employee {
     }
 }
 
-//
+//Create Employees and Managers (just used the already given sample)
+const alice = new Employee("Alice", 80000, "Developer", "Engineering");
+
+const bob = new Employee("Bob", 75000, "Designer", "Marketing");
+
+const charlie = new Manager("Charlie", 120000, "Engineering Manager", "Engineering", 20000);
+
+const diana = new Manager("Diana", 130000, "Marketing Manager", "Marketing", 25000);
+
+// Create Departments
+const engineering = new Department("Engineering");
+
+const marketing = new Department("Marketing");
+
+// Add Employees and Managers to Departments
+engineering.addEmployee(alice);
+
+engineering.addEmployee(charlie);
+
+marketing.addEmployee(bob);
+
+marketing.addEmployee(diana);
+
+// Calculate Total Salaries
+console.log("Marketing Department Total Salary (No Bonus): $", marketing.getDepartmentSalary());
+console.log("Marketing Department Total Salary (With Bonus): $", marketing.calculateTotalSalaryWithBonus());
+
+console.log("Engineering Department Total Salary (No Bonus): $", engineering.getDepartmentSalary());
+console.log("Engineering department Total Salary (With Bonus): $", engineering.calculateTotalSalaryWithBonus());
+
